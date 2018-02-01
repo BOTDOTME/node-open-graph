@@ -11,19 +11,8 @@ var shorthandProperties = {
 }
 
 
-exports = module.exports = function(url, cb, options){
-	exports.getHTML(url, function(err, html){
-		if (err) return cb(err);
-
-		try {
-			var parsedMeta = exports.parse(html, options);
-		}
-		catch (parseErr) {
-			cb(parseErr);
-		}
-
-		cb(null, parsedMeta);
-	})
+exports = module.exports = function(html, options){
+	exports.parse(html, options);
 }
 
 
